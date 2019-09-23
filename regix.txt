@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+
+namespace RegularExpressions
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //declaring array of size 3
+            string[] array = new string[4];
+
+            //fill array with some random values
+            array[0] = "abc@gmail.com";
+            array[1] = "abcgmail.com";
+            array[2] = "abc@gmailcom";
+            array[3] = "abc@gmail";
+
+            foreach(string str in array)
+            {
+                if(Regex.IsMatch(str, @"[a-z]+@[a-z]+\.com"))
+                {
+                    Console.WriteLine("pattern matches");
+                }
+                else
+                {
+                    Console.WriteLine("wrong pattern");
+                }
+            }
+            Console.ReadKey();
+
+        }
+    }
+}
